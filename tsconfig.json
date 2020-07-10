@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "rootDir": "lib",
+        "target": "ES6"
+    },
+    "typedocOptions": {
+        "mode": "modules",
+        "out": "docs"
+    }
+}
