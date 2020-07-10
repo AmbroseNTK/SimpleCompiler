@@ -12,8 +12,8 @@ export class Policy {
     public condition: Condition | null
   ) {}
 
-  private static fullClause = /[\n|\s]*ON[\n|\s]*(.+)[\n|\s]*RUN[\n|\s]*(.+)[\n|\s]*WHERE[\n|\s]*(.+\n*)[\n|\s]*CONDITION[\n|\s]*(.+\n*)/;
-  private static halfClause = /[\n|\s]*ON[\n|\s]*(.+)[\n|\s]*RUN[\n|\s]*(.+)[\n|\s]*WHERE[\n|\s]*(.+\n*)/;
+  private static fullClause = /[\n\s]*ON[\n\s]*(.*)[\n\s]*RUN[\n\s]*([\d\w\s$=\n]*)[\n\s]*WHERE[\n\s]*(.*)[\n\s]*CONDITION[\n\s]*(.*)/;
+  private static halfClause = /[\n\s]*ON[\n\s]*(.*)[\n\s]*RUN[\n\s]*([\d\w\s$=\n]*)[\n\s]*WHERE[\n\s]*(.*)[\n\s]*/;
 
   public static actionParsers: IParsable[] = [new SetAction(null, null)];
 

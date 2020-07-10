@@ -20,7 +20,12 @@ export class SetAction extends Action implements IParsable {
     }
     let variable = new Variable("");
     variable = variable.parse(tokens[1]);
-    let value = Value.parseValue(tokens[2]);
+    let value = null;
+    try {
+      value = variable.parse(tokens[2]);
+    } catch {
+      value = Value.parseValue(tokens[2]);
+    }
     return new SetAction(variable, value);
   }
 
